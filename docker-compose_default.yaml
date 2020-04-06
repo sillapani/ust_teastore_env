@@ -1,0 +1,36 @@
+version: '3'
+services:
+  auth:
+    image: tools_descartes_teastore_auth_1
+    expose:
+      - "8080"
+  #  environment:
+   #   HOST_NAME: "auth"
+    #  REGISTRY_HOST: "registry"
+  image:
+     image: tools_descartes_eastore_image_2
+     expose: 
+       - "8080"
+  persistence:
+     image: tools_descartes_teastore_persistence_3
+     expose: 
+      - "8080"
+  recommender:
+     image: tools_descartes_teastore_recommender_4 
+     expose: 
+      - "8080"
+  registry:
+     image: tools_descartes_teastore_registry_5
+     expose: 
+      - "8080"
+  webui:
+     image: tools_descartes_teastore_webui_6
+     expose: 
+      - "8080"
+  db:
+    image: descartesresearch_teastore-db
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+   
